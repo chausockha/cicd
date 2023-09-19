@@ -1,0 +1,25 @@
+name: Build something
+
+on:
+    push:
+        branches: [main]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        container: node:14.17.0
+        steps:
+            - uses: actions/checkout@v2
+            - name: Build
+              run: |
+                  echo "Hello World"
+
+            - name: yarn install
+              run: yarn install
+
+            - name: yarn build
+              run: yarn build
+
+            - name: Complete
+              run: |
+                    echo "Complete"
+
